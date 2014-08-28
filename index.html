@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Responsive Web Desing - Mobile First</title>
+
+		<meta name="description" content="Mini Curso sobre desenvolvimento web responsivo focado em no contexto mobile apresentado no Simpósio Mineiro de Engenharia de Software, em Novembro de 2014  ">
+		<meta name="author" content="Lucas Estevão">
+
+		<link rel="icon" type="image/x-icon" href="css/theme/favicon.ico" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Responsive Web Design</h1>
+					<h3 class="orange">Mobile First</h3>
+					<p>
+						<small>by <a target="_blank" href="http://br.linkedin.com/in/lucasestevao">Lucas Estevão</a> / <a target="_blank" href="http://twitter.com/lucasdsbh">@lucasdsbh</a></small>
+					</p>
+					<p>
+						<small>Simpósio Mineiro de Engenharia de Software | Agosto/2014</small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>
+								Apresentação do instrutor e presentes
+							</li>
+							<li>
+								Apresentação da Avenue Code
+							</li>
+							<li>
+								Objetivo do mini curso
+							</li>
+							<li>
+								Contexto Histórico
+							</li>
+							<li>
+								Contexto Mobile
+								<ol>
+									<li>Diferença entre o desktop e o dispositivo móvel</li>
+								</ol>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>
+								Responsive Web Desing
+								<ol>
+									<li>Layout Fluído</li>
+									<li>Layout Adaptável</li>
+									<li>Conteúdo Flexível</li>
+								</ol>
+							</li>
+							<li>
+								Mobile First
+								<ol>
+									<li>O Desafio</li>
+									<li>A proposta</li>
+									<li>Como construir Mobile First</li>
+								</ol>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>
+								Bônus
+								<ol>
+									<li>Boas práticas de alta performance</li>
+									<li>Acessibilidade</li>
+								</ol> 
+							</li>
+						</ul>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<h2>Lucas Estevão</h2>
+					<p>
+						24 anos, de Belo Horizonte, desenvolve front end há mais de cinco anos. Cofundador da startup Monkey <span class="orange">Mob</span>, atualmente trabalha como UI Engineer na Avenue Code, como parte da equipe do projeto "Tablet O." da Bloomingdale's.
+					</p>
+
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<h2>Avenue Code</h2>
+					<p>Empresa americana, de cultura ágil, especializada em desenvolvimento para grandes empresas de eccomerce.</p>
+					<p>
+						São Paulo | <span class="orange">BH</span> | São Francisco | Nova Iorque
+					</p>
+					<p>
+						<a target="_blank" href="http://avenuecode.com/">avenuecode.com</a>
+					</p>
+
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Objetivo do curso</h2>
+						<h3 class="orange">O que será apresentado</h3>
+						<p>Introdução ao conceito de Mobile First</p>
+						<p>Introdução ao conceito de Responsive Web Design</p>
+						<p>Apresentação dos fundamentos essenciais acompanhados de exemplos práticos em cada passo</p>
+						<p>Práticas para melhoria de performance web</p>
+						<p>Indicação e recomendação de ferramentas</p>
+					</section>
+					<section>
+						<h3 class="orange">O que NÃO será apresentado</h3>
+						<p>Desenvolvimento web em nível avançado</p>
+						<p>Conceitos avançados de Mobile First</p>
+						<p>HTML / CSS básico ou avançado</p>
+						<p>Técnicas de design gráfico</p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section data-transition="linear" data-background="#183835">
+					<section>
+						<h2>Contexto Histórico</h2>
+						<img class="no-border" src="img/Evolution-of-cellphone.jpg" alt="Evolution of cellphone" />
+					</section>
+					<section>
+						<a target="_blank" href="http://www.lukew.com/ff/entry.asp?1506"><img src="img/Babies-and-iPhones.png" alt="There are now more iPhones sold than babies born in the world every day"/></a>
+					</section>
+					<section>
+						<a target="_blank" href="http://www.slideshare.net/hoovazqtank/global-digital-statistics-2014?related=1/"><img src="img/Time-spent-on-internet.png" alt="Time spent on internet"/></a>
+					</section>
+					<section>
+						<a target="_blank" href="http://wearesocial.sg/blog/2014/04/social-digital-mobile-china-2014/"><img src="img/How-people-connect-to-the-net-in-China.png" alt="How people connect to the net in China" /></a>
+					</section>
+					<section>
+						<img src="img/Brazil-data-snapshot.png" alt="Brazil data snapshot" />
+					</section>
+					<section>
+						<p>Para que usamos nossos celulares?</p>
+						<p>Com que frequência?</p>
+						<p>Compramos?</p>
+						<p>Pesquisamos?</p>
+						<br/>
+						<p class="fragment">Que tipo de <span class="orange">decisões</span> podemos tomar a partir do uso de um dispositivo móvel?</p>
+					</section>
+					<section>
+						<img src="img/Brazil-smartphone-usage.png" alt="Brazil smartphone usage" />
+					</section>
+					<section>
+						<h2>Onde nós <span class="orange">estávamos</span>?</h2>
+						<a target="_blank" href="http://g1.globo.com/mundo/novo-papa-francisco/noticia/2013/03/batalhao-de-cameras-de-fieis-clica-sucessao-papal-compare-com-2005.html"><img src="http://s2.glbimg.com/lg2EZ7KO2UrBLR8pcq-3ZsdlAwP0Wc1y8-5okGiS1GxIoz-HdGixxa_8qOZvMp3w/s.glbimg.com/jo/g1/f/original/2013/03/14/ap05040408429.jpg" alt="Multidão lota a Via Della Conciliazione, em frente à Basílica de São Pedro, esperando para ver a passagem do corpo do Papa João Paulo II, em 4 de abril de 2005 (Foto: Luca Bruno/AP/Arquivo)" title="Multidão lota a Via Della Conciliazione, em frente à Basílica de São Pedro, esperando para ver a passagem do corpo do Papa João Paulo II, em 4 de abril de 2005" /></a>
+					</section>
+					<section>
+						<h2>Onde nós <span class="orange">estamos</span>?</h2>
+						<img src="http://s2.glbimg.com/ky0TYC8kwlT500vfDDvG-fOMn4ED_9t2jzedD-yRQilIoz-HdGixxa_8qOZvMp3w/s.glbimg.com/jo/g1/f/original/2013/03/14/aptopix-vatican-pope_fran2.jpg" alt="Multidão registra a primeira aparição do Papa Francisco, no balcão da Basílica de São Pedro na noite de quarta-feira (13) (Foto: Michael Sohn/AP)" title="Multidão registra a primeira aparição do Papa Francisco, no balcão da Basílica de São Pedro na noite de quarta-feira, 13 de março de 2013" />
+					</section>
+					<section>
+						<h2>Onde nós <span class="orange">estaremos</span>?</h2>
+						<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+							&ldquo;O número total de pessoas acessando a web através de dispositivos móveis irá superar o acesso via desktop em 2015.&rdquo;
+						</blockquote>
+						<p>International Data Corporation (<a target="_blank" href="http://bit.ly/nLrEdy">http://bit.ly/nLrEdy</a>) 
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section data-background="#06151C">
+					<section>
+						<h2>Contexto Mobile</h2>
+						<img class="no-border" src="img/Mobile-context---.jpg" alt="Mobile context" />
+					</section>
+					<section>
+						<h2>Desktop <span class="orange">vs</span> Dispositivo móvel</h2>
+					</section>
+					<section>
+						<h3 class="text-left">Como se <span class="orange">conectar</span>?</h3>
+						<p class="left fragment">Internet a cabo com banda larga</p>
+						<p class="right fragment">Cobertura de internet instável e de banda enxuta</p>
+						<h3 class="text-left top-margin">Quais <span class="orange">recursos</span> estão disponíveis?</h3>
+						<p class="left fragment">Processador de 3 GHz, 4GB de RAM, espaço de sobra para armazenamento de dados</p>
+						<p class="right fragment">Processador de 1,3 GHz, 512MB de RAM, cerca de 64 GB de  espaço interno. Acelerômetro, GPS integrado, etc.</p>
+					</section>
+					<section>
+						<h3 class="text-left">Qual o nível de <span class="orange">diversidade</span>?</h3>
+						<p class="left fragment">Pequena fragmentação de browsers; escreva uma vez, alcance vários</p>
+						<p class="right fragment">Grande fragmentação de browsers e dispositivos (Só o Android possui mais de 400)</p>
+						<h3 class="text-left top-margin">Como fica na <span class="orange">tela</span>?</h3>
+						<p class="left fragment">1.600px wide?!</p>
+						<p class="right fragment">Telas menores, baixa resolução, teclado na tela</p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<img src="img/Responsive-design.jpg" alt="Diferentes tipos de dispositivos" />
+					</section>
+					<section>
+						<h2>Definição</h2>
+						<p>
+							Desenvolver web sites com layout e conteúdo ﬂexíveis e adaptáveis, capazes de <span class="orange">responder</span> à uma grande variedade de resoluções de tela, dispositivos e contextos.
+						</p>
+					</section>
+					<section>
+						<h2>Exemplo</h2>
+						<img src="img/Moacir.png" alt="Moacir Pereira, treinador de futebol" />
+					</section>
+					<section>
+						<h3>De onde surgiu?</h3>
+						<video src="What-is-responsive-architecture.mp4" controls>
+							Seu navegador não suporta o elemento <code>video</code>. Acesse <a target="_blank" href="https://www.youtube.com/watch?v=WwzCfKvFxRQ">https://www.youtube.com/watch?v=WwzCfKvFxRQ</a>
+						</video>
+					</section>
+					<section>
+						<h3>Por que responsivo?</h3>
+						<img class="no-border" src="img/Google-developers.png" alt="Recomendação da Google" title="Google developers advice"/>
+						<p class="fragment">A Google <span class="orange">recomenda</span>, e te <span class="orange">recompensa</span>.</p>
+						<blockquote class="fragment">&ldquo;Sites que usam Web Design Responsivo, [...] com cada URL fornecendo o mesmo HTML a todos os dispositivos e usando apenas CSS para alterar como a página é processada no dispositivo. Essa é a configuração recomendada...&rdquo;</blockquote>
+						<a class="fragment" target="_blank" href="https://developers.google.com/webmasters/smartphone-sites/details">https://developers.google.com/webmasters/smartphone-sites/details</a>
+					</section>
+					<div class="footer class="fragment><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Responsivo, na <span class="orange">prática</span>!</h2>
+						<img src="img/Mão-na-massa.jpg" alt="Colocando a mão na massa" />
+					</section>
+					<section>
+						<h2>Ingredientes:</h2>
+						<h3 class="fragment">
+							layout <span class="orange">fluído</span>
+						</h3>
+						<p class="orange">+</p>
+						<h3 class="fragment">
+							layout <span class="orange">adaptável</span>
+						</h3>
+						<p class="orange">+</p>
+						<h3 class="fragment">
+							conteúdo <span class="orange">flexível</span>
+						</h3>
+					</section>
+
+					<section>
+						<h2>1. Layout <span class="orange">fluído</span></h2>
+						<p>Faz uso de medidas relativas (<code>%, em, rem</code>) para proporcionar fluidez ao site quando o tamanho de tela ou fonte são alterados</p>
+					</section>
+					<section>
+						<h3 class="orange text-left">PX</h3>
+						<p>Medidas imutáveis, como background ou text-shadow</p>
+						<div class="fragment">
+							<h3 class="orange text-left">EM</h3>
+							<p>Valor relativo ao <code>font-size</code> do elemento pai</p>
+							<p>Utilizado em fontes, margins, paddings</p>
+						</div>
+						<div class="fragment">
+							<h3 class="orange text-left">REM</h3>
+							<p>Valor relativo ao <code>font-size</code> do root do documento</p>
+							<p>Não funciona em algumas versões de Android e IE<9</p>
+						</div>
+						<div class="fragment">
+							<h3 class="orange text-left">%</h3>
+							<p>Utilizado em containers, grids fluídos e imagens</p>
+						</div>
+					</section>
+					<section>
+						<h2>CSS Box Model</h2>
+						<img src="img/box-conteudo.png" alt="Conteúdo da caixa" />
+						<p><span class="orange">Conteúdo</span>: caixa onde o conteúdo é exibido</p>
+					</section>
+					<section>
+						<h2>CSS Box Model</h2>
+						<img src="img/box-padding.png" alt="Espaçamento interno da caixa" />
+						<p><span class="orange">Padding</span>: espaçamento em torno do conteúdo</p>
+					</section>
+					<section>
+						<h2>CSS Box Model</h2>
+						<img src="img/box-border.png" alt="Borda da caixa" />
+						<p><span class="orange">Border</span>: a borda que vai ao redor do elemento</p>
+					</section>
+					<section>
+						<h2>CSS Box Model</h2>
+						<img src="img/box-margin.png" alt="Espaçamento externo da caixa" />
+						<p><span class="orange">Margin</span>: espaçamento ao redor da borda do elemento</p>
+					</section>
+					<section>
+						<h2>box-sizing: <span class="orange">content-box</span></h2>
+						<img src="img/box-content-box.png" alt="Explicação do box sizing" />
+						<p>O default do browser é o content-box, que considera o tamanho original somado aos espaçamentos (padding, margin, etc).</p>
+					</section>
+					<section>
+						<h2>box-sizing: <span class="orange">border-box</span></h2>
+						<img src="img/box-border-box.png" alt="Explicação do box sizing" />
+						<p>A propriedade border-box faz com que o tamanho dessas propriedades não seja somada à largura definida para o elemento.</p>
+					</section>
+					<section>
+						<h2>Aplicação</h2>
+						<pre><code data-trim contenteditable>
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Criando uma estrutura fluída</h2>
+						<h3>Tamanho <span class="orange">÷</span> contexto <span class="orange">=</span> resultado</h3>
+					</section>
+					<section>
+						<h2>Criando uma estrutura fluída</h2>
+						<img src="img/grid-fixo.png" alt="Grid fixo" />
+					</section>
+					<section>
+						<h2>Criando uma estrutura fluída</h2>
+						<img src="img/grid-fluido.png" alt="Grid fluído" />
+					</section>
+					<section>
+						<h2>Criando uma estrutura fluída</h2>
+						<img src="img/calc-margin-padding.png" alt="Cálculo de margin e padding para serem fluídos" />
+					</section>
+					<section>
+						<h2>Tipografia fluída - <span class="orange">EM</span></h2>
+						<pre><code>
+body { font-size: 16px; }
+
+h1 { font-size: 24px; }
+
+h1 span { font-size: 18px; }
+_____________________________
+
+/* 24 ÷ 16 = 1.5 */
+h1 { font-size: 1.5em; }
+
+/* 18 ÷ 24 = 0.75 */
+h1 span { font-size: 0.75em; }
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tipografia fluída - <span class="orange">REM</span></h2>
+						<pre><code>
+body { font-size: 16px; }
+
+h1 { font-size: 24px; }
+
+h1 span { font-size: 18px; }
+_____________________________
+
+h1 { font-size: 1.5rem; }
+/* 24 ÷ 16 = 1.5 */
+
+h1 span { font-size: 1.125rem; }
+/* 18 ÷ 16 = 1.125 */
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tipografia fluída - <span class="orange">um facilitador....</span></h2>
+						<p>Para evitar perda de tempo e resultados quebrados, podemos atribuir ao font-size do <code>html</code> o valor de 62.5%. Assim sendo, o valor de 1EM equivalerá a 10px, facilitando os cálculos!</p>
+						<pre><code>
+htm1 { font-size: 62,5%; }
+
+h1 { font-size: 15px; }
+
+h1 span { font-size: 11px; }
+_____________________________
+
+htm1 { font-size: 62,5%; }
+
+h1 { font-size: 1.5em; }
+
+h1 span { font-size: 1.1em; }
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>2. Layout <span class="orange">adaptável</span></h2>
+						<p>Consiste em modificar, e/ou disponibilizar, ou <span class="orange">não</span>, determinados elementos de acordo com o tamanho de tela, adaptanto o conteúdo mais relevante ao espaço disponível.</p>
+					</section>
+					<section>
+						<h2>A <span class="orange">viewport</span></h2>
+						<p><<code>meta name="viewport" content="width=device-width, initial-scale=1.0"/</code>></p>
+						<br>
+						<p>Viewport é a aréa de <span class="orange">visualização</span> do dispositivo, onde o site é exibido.</p>
+						<br>
+						<p>A customização do viewport serve para deﬁnir a resolução inicial de visualização do site, e evitar a miniaturização do mesmo.</p>
+					</section>
+					<section>
+						<h2><span class="orange">Break</span> Points</h2>
+						<img src="img/Break-points.jpg" alt="Break points de acordo com tamanhos de tela" />
+						<p>Pontos de mudanças consideráveis no layout da página.</p>
+					</section>
+					<section>
+						<h2>Exemplos</h2>
+						<p><a target="_blank" href="http://responsive-nav.com/">Menu</a></p>
+						<p><a target="_blank" href="http://moacirpereira.com/">Disposição de elementos</a></p>
+						<p><a target="_blank" href="http://css-tricks.com/">Inibição de conteúdo</a></p>
+					</section>
+					<section>
+						<h2>Media <span class="orange">Queries</span></h2>
+						<p>Expressões condicionais para aplicar diferentes regras de CSS, dependendo da largura do viewport e/ou orientação da tela, por exemplo.</p>
+
+						<p class="fragment"><code class="orange">@media screen and (max-width:480px)</code><br>
+						(resolução máxima no viewport de 480px)</p>
+
+						<p class="fragment"><code class="orange">@media all and (orientation:landscape)</code><br>
+						Orientação “paisagem”</p>
+
+						<p class="fragment"><code class="orange">@media screen and (min-width: 400px) and (max-width: 700px)</code><br>
+						Tela com resolução mínima de 400px e máxima de 700px</p>
+					</section>
+
+					<section>
+						<h2>3. Conteúdo <span class="orange">flexível</span></h2>
+						<p>A mesma fluidez e adaptação de elementos estruturais se aplica aos componentes de mídia.</p>
+					</section>
+					<section>
+						<h2>Imagens <span class="orange">responsivas</span></h2>
+						<img src="img/Raster-vector.jpg" alt="Diferença entre imagem raster e vector" />
+						<p class="left gray">Cálculos matemáticos de um ponto ao outro que constroem formas geométricas.</p>
+						<p class="right gray">Imagens feitas de pixels. Um ponto único e mínimo na tela de um dispositivo.</p>
+					</section>
+					<section>
+						<h2>SVG</h2>
+						<p>SVG é a abreviatura de Scalable Vector Graphics que pode ser traduzido do inglês como gráﬁcos vetoriais escaláveis.</p>
+						<p class="orange">Trata-se de uma linguagem XML para descrever de forma vetorial desenhos e gráﬁcos bidimensionais, quer de forma estática, quer dinâmica ou animada. </p>
+						<p>Incorporamos nos sites de forma responsiva utilizando a tag <code>object</code>, para poder fornecer uma opção alternativa de imagem a navegadores que não suportam SVG.</p>
+					</section>
+					<section>
+						<h2>SVG</h2>
+						<pre><code data-trim contenteditable>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://
+www.w3.org/2000/svg" xmlns:xlink="http://
+www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 80 80"\
+enable-background="new 0 0
+80 80" xml:space="preserve">
+	<circle fill="#682A68" cx="40" cy="40" r="40"/>
+	<polygon fill="#FFFFFF" points="39.136,15.483 
+	45.049,33.682 64.186,33.682 48.704,44.93 
+	54.615,63.127 39.136,51.881 !
+	!23.655,63.127 29.568,44.93 14.087,33.682
+	33.223,33.682 "/>
+</svg>
+						</code></pre>
+						<pre><code data-trim contenteditable>
+<object data="your.svg" type="image/svg+xml">
+  <img src="yourfallback.jpg" />
+</object>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tamanhos <span class="orange">diferentes</span> por resolução</h2>
+						<p>A <a target="_blank" href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">W3C</a> está trabalhando nesta nova possibilidade</p>
+						<pre><code data-trim contenteditable>
+<picture>
+  <source media="(min-width: 45em)" srcset="large-1.jpg, large-2.jpg 2x">
+  <source media="(min-width: 18em)" srcset="med-1.jpg, med-2.jpg 2x">
+  <source srcset="small-1.jpg, small-2.jpg 2x">
+  <img src="small-1.jpg" alt="The president giving an award.">
+</picture>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Imagens via JavaScript</h2>
+						<p>A biblioteca de Javascript <a target="_blank" href="https://github.com/scottjehl/picturefill">Picturefill</a>, permite deﬁnir várias chamadas de mídia para diferentes resoluções de tela. 
+					</section>
+					<section>
+						<h2>Imagens fluindo...</h2>
+						<a target="_blank" href="http://monkeymob.com.br"><img class="no-border	" alt="Monkey Mob" width="445" height="267" src="img/monkey.png"></a>
+						<pre><code data-trim contenteditable>
+#imagem {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+						</code></pre>
+					</section>
+					
+
+					<section>
+						<h2>Testando</h3>
+						<p><a target="_blank" href="https://developer.chrome.com/devtools/docs/device-mode">https://developer.chrome.com/devtools/docs/device-mode</a></p>
+						<p><a target="_blank" href="http://quirktools.com/screenfly/">http://quirktools.com/screenfly</a></p>
+						<p><a target="_blank" href="https://www.responsinator.com">https://www.responsinator.com</a></p>
+						<p><a target="_blank" href="http://lab.maltewassermann.com/viewport-resizer/">http://lab.maltewassermann.com/viewport-resizer</a></p>
+						<br>
+						<h3 class="orange">Recursos:</h3>
+						<p><a target="_blank" href="http://bradfrost.github.io/this-is-responsive/resources.html/">http://bradfrost.github.io/this-is-responsive/resources.html</a></p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Uma pausa para <span class="orange">reflexão</span>!</h2>
+						<h2 class="fragment top-margin-s">Versão Mobile <span class="orange">vs</span> Site Responsivo</h2>
+					</section>
+
+					<section>
+						<h2>Comparando...</h2>
+						<a target="_blank" href="http://googlemobileads.blogspot.com.br/2012/07/mobile-websites-vs-responsive-design.html"><img src="img/Google-responsive-and-mobile-sites.png" alt="Which solution is better for your mobile site" /></a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mobile First</h2>
+						<img src="img/Mobile-first.jpg" alt="Pessoa utilizando dispositivo móvel" />
+					</section>
+					<section>
+						<h2>O desafio</h2>
+						<p>
+							 O <span class="orange">excesso</span> de informação em grande parte dos sites se dá porque é relativamente fácil adicionar conteúdo na versão desktop.
+						</p>
+					</section>
+					<section>
+						<h2>A proposta</h2>
+						<p>
+						￼Desenhe sua solução primeiro para <span class="orange">mobile</span>, depois para desktop.
+						</p>
+					</section>
+					<section>
+						<h2>Como?</h3>
+						<p><span class="orange">Estabelecer</span> uma escala hierárquica de importância das informações textuais e gráficas do site</p>
+						<p><span class="orange">Repensar</span> a pertinência de apresentação dessas informações em diferentes contextos e dispositivos</p>
+					</section>
+					<section>
+						<h2>Modularização</h3>
+						<img src="img/modulos-mobile.png" alt="Priorizando os módulos no contexto mobile" />
+					</section>
+					<section>
+						<h2>Modularização</h3>
+						<img src="img/modulos.png" alt="Priorizando os módulos" />
+					</section>
+					<section>
+						<h2>Exemplo</h3>
+						<p><a target="_blank" href="http://foodsense.is/">http://foodsense.is</a></p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Performance</h2>
+						<img src="img/mobile-performance.jpg" alt="Performance mobile" />
+					</section>
+					<section>
+						<h2>O problema</h2>
+						<blockquote>
+							&ldquo;80+% of the total response time is spent dealing with what's in the HTML document, namely, the <span class="orange">front end</span>. That's why the key to faster web sites is to focus on improving front-end performance.&rdquo;
+						</blockquote>
+						<p>
+							Steve Souders, desenvolvedor do Google e autor do livro "High Performance Web Sites"
+						</p>
+					</section>
+					<section>
+						<h2>As soluções</h2>
+						<p>
+							<a target="_blank" href="http://developer.yahoo.com/performance/rules.html">http://developer.yahoo.com/performance/rules.html</a>
+						</p>
+						<p>
+							<a target="_blank" href="https://developers.google.com/speed/docs/best-practices">https://developers.google.com/speed/docs/best-practices</a>
+						</p>
+					</section>
+					<section>
+						<h3>1. Diminuir o número de requisições HTTP</h3>
+						<p>Evite @import</p>
+						<p>Combine arquivos de CSS</p>
+						<p>Combine arquivos de JavaScript</p>
+						<p>Combine imagens utilizando sprites <a target="_blank" href="http://spritepad.wearekiss.com/">http://spritepad.wearekiss.com/</a></p>
+					</section>
+					<section>
+						<h3>2. Posicione o estilo no topo (<span class="orange">HEAD</span>)</h3>
+						<h3 class="top-margin-s">3. Posicione o script no final (logo antes do <span class="orange">BODY</span>)</h3>
+					</section>
+					<section>
+						<h3>4. Especifique o tamanho das imagens</h3>
+						<p>Na tag <code>img</code> ou no CSS</p>
+						<h3 class="top-margin-s">5. Comprima as imagens</h3>
+						<p><a target="_blank" href="http://www.smushit.com/ysmush.it/">http://www.smushit.com/ysmush.it/</a></p>
+					</section>
+					<section>
+						<h3>6. Minifique o CSS</h3>
+						<p><a target="_blank" href="http://www.minifycss.com/css-compressor/">http://www.minifycss.com/css-compressor</a></p>
+						<h3 class="top-margin-s">7. Minifique o Javascript</h3>
+						<p><a target="_blank" href="http://jscompress.com/">http://jscompress.com</a></p>
+					</section>
+					<section>
+						<h3>8. Otimize o CSS e o JavaScript</h3>
+						<p><a target="_blank" href="http://jsperf.com/jquery-addclass-vs-dom-classlist">http://jsperf.com</a> | <a target="_blank" href="http://www.jslint.com/">http://www.jslint.com</a></p>
+						<br><br>
+						<p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS</a></p>
+						<p>Evite CSS Expressions: <code>background-color: expression( (new Date()).getHours()%2 ? "#B8D4FF" : "#F08A00" );</code></p>
+					</section>
+					<section>
+						<h3>E o que <span class="orange">mais</span>?</h3>
+						<p><a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">https://developers.google.com/speed/pagespeed/insights/</a></p>
+						<p><a target="_blank" href="https://developer.yahoo.com/yslow/">https://developer.yahoo.com/yslow/</a></p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Acessibilidade</h2>
+						<img src="img/accessibility.jpg" alt="Acessibilidade mobile" />
+					</section>
+					<section>
+						<h2>Leis e Decretos</h2>
+						<p class="text-small">Decreto nº 5.296 de 02 de dezembro de 2004 (<a target="_blank" href="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Decreto/D5296.htm">link</a>).</p>
+						<p class="text-small">Decreto nº 6.949, de 25 de agosto de 2009 - Promulga a Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, assinados em Nova York, em 30 de março de 2007 (<a target="_blank" href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm">link</a>).</p>
+						<p class="text-small">Decreto nº 7.724, de 16 de Maio de 2012 - Regulamenta a Lei No 12.527, que dispõe sobre o acesso a informações (<a target="_blank" href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm">link</a>).</p>
+						<p class="text-small">Modelo de Acessibilidade de Governo Eletrônico (<a target="_blank" href="http://www.governoeletronico.gov.br/acoes-e-projetos/e-MAG">link</a>).
+						Portaria nº 03, de 07 de Maio de 2007 - formato .pdf (35,5Kb) - Institucionaliza o Modelo de  Acessibilidade em Governo Eletrônico – e-MAG (<a target="_blank" href="http://www.governoeletronico.gov.br/biblioteca/arquivos/portaria-no-03-de-07-05-2007">link</a>).</p>
+					</section>
+					<section>
+						<h2>Referências</h2>
+						<p><a target="_blank" href="http://www.brasil.gov.br/acessibilidade">http://www.brasil.gov.br/acessibilidade</a></p>
+						<p><a target="_blank" href="http://www.maujor.com/w3c/tec_css_acess.html">http://www.maujor.com/w3c/tec_css_acess.html</a></p>
+						<p><a target="_blank" href="http://www.acessibilidade.net/web/">http://www.acessibilidade.net/web/</a></p>
+					</section>
+					<div class="footer"><hr/><div>Responsive Web Design, Mobile First | Lucas Estevão</div><img src="css/theme/ac-logo.png" class="img-footer" alt="Avenue Code"></div>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>Avenue Code is <span class="orange">hiring</span>!</h3>
+					<h4>Send e-mails to <a href="mailto:jobs.brazil@avenuecode.com" target="_top">jobs.brazil@avenuecode.com</a></h4>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme,
+				transition: Reveal.getQueryHash().transition || 'default',
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
+
+<!--
+	Press <strong>ESC</strong> to enter the slide overview.
+
+	Hold down alt and click on any element to zoom in on it using.
+	Alt + click anywhere to zoom back out.
+	Works in Mobile Safari. Try it out! You can swipe through the slides and pinch your way to the overview.
+
+	Press b or period on your keyboard to enter the 'paused' mode.
+	This mode is helpful when you want to take distracting slides off the screen during a presentation.
+ -->
